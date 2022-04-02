@@ -2,6 +2,7 @@ import {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify'
 import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
+import OAuth from '../components/OAuth'
 import { db } from '../firebase.config'
 import {setDoc, doc, serverTimestamp} from 'firebase/firestore'
 import {ReactComponent as ArrowRightIcon} from '../assets/svg/keyboardArrowRightIcon.svg'
@@ -106,8 +107,9 @@ const onChange = (e) => {
               </button>
             </div>
           </form>
-
-          {/*Google OAuth */}
+           
+           <OAuth />
+           
           <Link to ='/sign-in' className='registerLink'>
             Sign In Instead
           </Link>
